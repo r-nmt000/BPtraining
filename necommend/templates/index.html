@@ -1,0 +1,12 @@
+<h1> NECOMMENDATION SITE </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if neco_list %}
+<ul>
+  {% for cat in neco_list %}
+    <li>{{ cat.explain }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>No cats are here.</p>
+{% endif %}
