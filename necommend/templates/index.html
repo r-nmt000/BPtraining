@@ -4,7 +4,7 @@
 {% if neco_list %}
 <ul>
   {% for cat in neco_list %}
-  <li><img src="{{STATIC_URL}}img/1.jpg"/></li>
+  <li><img src="{{STATIC_URL}}img/{{ cat.img }}"/></li>
   {% endfor %}
 </ul>
 {% else %}
