@@ -12,4 +12,8 @@ urlpatterns = patterns('',
         queryset=Neco.objects.all(),
         context_object_name='neco_list',
         template_name='index.html')),
+    url(r'^(?P<pk>\d+)/$',
+      DetailView.as_view(
+        model=Neco,
+        template_name='detail.html')),
 )

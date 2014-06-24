@@ -3,8 +3,12 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 {% if neco_list %}
 <ul>
-  {% for cat in neco_list %}
-  <li><img src="{{STATIC_URL}}img/{{ cat.img }}"/></li>
+  {% for neco in neco_list %}
+  <li>
+    <a href ="/necommend/{{ neco.id }}/">
+      <img src="{{STATIC_URL}}img/{{ neco.img }}"/>
+    </a>
+  </li>
   {% endfor %}
 </ul>
 {% else %}
