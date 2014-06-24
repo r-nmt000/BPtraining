@@ -8,6 +8,7 @@ def main():
   import csv
   from necommend.models import Neco,Tag,Category
 
+  Category.objects.all().delete()
   Tag.objects.all().delete()
   Neco.objects.all().delete()
 
