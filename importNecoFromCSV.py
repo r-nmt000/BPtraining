@@ -10,6 +10,8 @@ def main():
   try:
     catReader = csv.reader(open("necommend/csv/neco.csv"))
     tagReader = csv.reader(open("necommend/csv/tag.csv"))
+
+    #create category
     if Category.objects.all():
       print "table has category"
       c1 = Category.objects.get(name="cat")
