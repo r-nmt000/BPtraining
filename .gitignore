@@ -2,3 +2,5 @@ log/
 tmp/
 img/
 cache/
+*.pyc
+password.py

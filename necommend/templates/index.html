@@ -1,16 +1,41 @@
-<h1> NECOMMENDATION SITE </h1>
-
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-{% if neco_list %}
-<ul>
-  {% for neco in neco_list %}
-  <li>
-    <a href ="/necommend/{{ neco.id }}/">
-      <img src="{{STATIC_URL}}img/{{ neco.img }}"/>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-  <p>No cats are here.</p>
-{% endif %}
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="{{STATIC_URL}}js/Rtoaster.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+  <script type="text/javascript">
+    Rtoaster.init("RTA-4854-6885b731a7de");
+    Rtoaster.track();
+  </script>
+    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1> 
+      <img id="title_img" src="{{STATIC_URL}}img/title.png"/>
+    </h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% if neco_list %}
+    <div class="container">
+      <ul class="thumbnails">
+        <li class="cat">
+        <div id="rtoaster_banner"></div>
+        </li>
+        {% for neco in neco_list %}
+        <li class="cat">
+        <div class="thumbnail">
+          <a href ="/necommend/{{ neco.id }}/">
+            <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/>
+          </a>
+        </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <p>No cats are here.</p>
+    {% endif %}
+<script type="text/javascript">
+  Rtoaster.recommendNow("rtoaster_banner");
+</script>
+  </body>
+</html>

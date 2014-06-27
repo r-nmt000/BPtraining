@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+import password
 # Application definition
 
 INSTALLED_APPS = (
@@ -63,7 +63,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'NecommendDB',
         'USER': 'root',
-        'PASSWORD': 'BMXJcq7m',
+        'PASSWORD': password.PASSWORD,
         'HOST':'',
         'PORT':'',
     }
