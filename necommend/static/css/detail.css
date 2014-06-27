@@ -14,7 +14,11 @@ body {
   /* background-image:url("/img/pink_stripe.jpg") */
   text-align:center;    /*IE6以下でセンタリングするための対策*/
 }
-
+div.container {
+  width: 1300px;
+  height: 1000px;
+  margin: auto;
+}
 
 img.detail_img {
   width: 400px;
@@ -26,12 +30,13 @@ img.recommended_cat {
   height:200px;
 }
 #item_auto div {
-  float left;
+  float: left;
 }
+
 #item_autohistory {
-  float none;
+  clear: both;
 }
 
 #item_auto_history div {
-  float left;
+  float: left;
 }
