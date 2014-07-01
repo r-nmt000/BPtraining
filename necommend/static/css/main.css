@@ -3,38 +3,39 @@
 /*============================================
  * 全般的なスタイル
  * ============================================*/
-* {
-  margin:0; padding:0;  /*全要素のマージン・パディングをリセット*/
-  line-height:1.5;  /*全要素の行の高さを1.5倍にする*/
-  color:#333333;    /*文字色*/
-
-} 
-body {
-  /* background-image:url("/img/pink_stripe.jpg") */
-  text-align:center;    /*IE6以下でセンタリングするための対策*/
-}
-
-div {
-  display:block;
-}
-li.cat {
+/* * { */
+/*   margin:0; padding:0;  /*全要素のマージン・パディングをリセット*/ */
+/*   line-height:1.5;  /*全要素の行の高さを1.5倍にする*/ */
+/*   color:#333333;    /*文字色*/ */
+/*  */
+/* }  */
+/* body { */
+/*   /* background-image:url("/img/pink_stripe.jpg") */ */
+/*   text-align:center;    /*IE6以下でセンタリングするための対策*/ */
+/* } */
+/*  */
+/* div { */
+/*   display:block; */
+/* } */
+/* .container { */
+/*   style="padding:20px 0" */
+/* } */
+li {
   list-style:none;
-  float:left;
 }
-
-img.thum_img {
-  width: 300px;
-  height: 300px;
-}
-
-div.container {
-  margin-left: 300;
-  /* margin-right; auto; */
-  width: 1300px;
-  height; auto;
-}
-
-.thumbnails>li {
-  float: left;
-  margin:0 0 18px 20px;
-}
+/* li.cat { */
+/*   list-style:none; */
+/*   /* float:left; */ */
+/* } */
+/* ul.thumnails { */
+/*   height:auto; */
+/* } */
+/* img.thum_img { */
+/*   width: 300px; */
+/*   height: 300px; */
+/* } */
+/*  */
+/* .thumbnails>li { */
+/*   /* float: left; */ */
+/*   margin:0 0 18px 20px; */
+/* } */

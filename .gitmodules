@@ -1,0 +1,3 @@
+[submodule "necommend/static/Bootstrap-Image-Gallery"]
+	path = necommend/static/Bootstrap-Image-Gallery
+	url = https://github.com/blueimp/Bootstrap-Image-Gallery.git

@@ -1,41 +1,112 @@
-<html lang="en" ng-app>
+<html lang="ja" ng-app>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detail</title>
+    <!-- Bootstrap -->
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="{{STATIC_URL}}js/Rtoaster.js"></script>
     <script type="text/javascript" src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
-  <script type="text/javascript">
-    Rtoaster.init("RTA-4854-6885b731a7de");
-    Rtoaster.track();
-  </script>
-    <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1> 
-      <img id="title_img" src="{{STATIC_URL}}img/title.png"/>
-    </h1>
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-    {% if neco_list %}
-    <div class="container">
-      <ul class="thumbnails">
-        <li class="cat">
-        <div id="rtoaster_banner"></div>
-        </li>
-        {% for neco in neco_list %}
-        <li class="cat">
-        <div class="thumbnail">
-          <a href ="/necommend/{{ neco.id }}/">
-            <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/>
-          </a>
+    <script type="text/javascript">
+      Rtoaster.init("RTA-4854-6885b731a7de");
+      Rtoaster.track();
+      </script>
+      <link href="{{STATIC_URL}}css/main.css" rel="stylesheet">
+      <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+      <link rel="stylesheet" href="{{STATIC_URL}}Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css">
+    </head>
+    <body>
+      <h1> 
+        <img id="title_img" src="{{STATIC_URL}}img/title.png"/>
+      </h1>
+      {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      {% if neco_list %}
+      <div class="container">
+        <div class="row" data-toggle="modal-gallery" data-target="#modal-gallery">
+          <!-- <div class="col&#45;sm&#45;12"> -->
+            <ul class="thumbnails">
+              <li class="col-sm-3">
+              <div id="rtoaster_banner"></div>
+              </li>
+              {% for neco in neco_list %}
+              <li class="col-sm-3">
+              <div class="thumbnail">
+                <!-- <a href ="/necommend/{{ neco.id }}/" data&#45;gallery="gallery"> -->
+                <!--   <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/> -->
+                <a href ="{{STATIC_URL}}img/{{neco.img}}" data-gallery="gallery">
+                  <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/>
+                </a>
+              </div>
+              </li>
+              {% endfor %}
+            </ul>
+          <!-- </div> -->
         </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% else %}
-    <p>No cats are here.</p>
-    {% endif %}
-<script type="text/javascript">
-  Rtoaster.recommendNow("rtoaster_banner");
-</script>
-  </body>
-</html>
+        <ul class="pagination">
+          <li><a href="">&laquo;</a></li>
+          <li><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">&raquo;</a></li>
+        </ul>
+      </div>
+      {% else %}
+      <p>No cats are here.</p>
+      {% endif %}
+
+      <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+      <div id="blueimp-gallery" class="blueimp-gallery">
+        <!-- The container for the modal slides -->
+        <div class="slides"></div>
+        <!-- Controls for the borderless lightbox -->
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+        <!-- The modal dialog, which will be used to wrap the lightbox content -->
+        <div class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+              </div>
+              <div class="modal-body next"></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left prev">
+                  <i class="glyphicon glyphicon-chevron-left"></i>
+                  Previous
+                </button>
+                <button type="button" class="btn btn-primary next">
+                  Next
+                  <i class="glyphicon glyphicon-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+          Rtoaster.recommendNow("rtoaster_banner");
+          </script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+          <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+          <script src="{{STATIC_URL}}Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
+          <!-- modal-gallery is the modal dialog used for the image gallery -->
+          <!-- <div id="modal&#45;gallery" class="modal modal&#45;gallery hide fade" tabindex="&#45;1"> -->
+            <!--   <div class="modal&#45;header"> -->
+              <!--     <a class="close" data&#45;dismiss="modal">&#38;times;</a> -->
+              <!--     <h3 class="modal&#45;title"></h3> -->
+              <!--   </div> -->
+            <!--   <div class="modal&#45;body"><div class="modal&#45;image"></div></div> -->
+            <!--   <div class="modal&#45;footer"> -->
+              <!--     <a class="btn btn&#45;primary modal&#45;next">Next <i class="icon&#45;arrow&#45;right icon&#45;white"></i></a> -->
+              <!--     <a class="btn btn&#45;info modal&#45;prev"><i class="icon&#45;arrow&#45;left icon&#45;white"></i> Previous</a> -->
+              <!--     <a class="btn btn&#45;success modal&#45;play modal&#45;slideshow" data&#45;slideshow="5000"><i class="icon&#45;play icon&#45;white"></i> Slideshow</a> -->
+              <!--     <a class="btn modal&#45;download" target="_blank"><i class="icon&#45;download"></i> Download</a> -->
+              <!-- </div> -->
+          </body>
+        </html>
