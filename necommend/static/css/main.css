@@ -23,6 +23,9 @@
 li {
   list-style:none;
 }
+.center {
+  text-align: center;
+}
 /* li.cat { */
 /*   list-style:none; */
 /*   /* float:left; */ */
