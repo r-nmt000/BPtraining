@@ -84,4 +84,4 @@ docs/_build/
 local_settings.py
 
 ### my settings ###
-./necommend/static/img
+./necommend/static/img/
