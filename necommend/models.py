@@ -1,4 +1,7 @@
 from django.db import models
+from django.core import serializers
+from django.shortcuts import get_list_or_404
+from django.shortcuts import get_object_or_404
 import doctest
 # Create your models here.
 class Tag(models.Model):
@@ -70,3 +73,13 @@ class Neco(models.Model):
 
   def __unicode__(self):
     return self.explain
+ 
+  @classmethod
+  def serialize_list(cls, format, **options):
+    _list = get_list_or_404(cls)
+    return serializers.serialize(format, _list, **options)
+
+  @classmethod
+  def serialize_object(cls, format, pk, **options):
+    _object = [get_object_or_404(cls, pk=pk)]
+    return serializers.serialize(format, _object, **options)
