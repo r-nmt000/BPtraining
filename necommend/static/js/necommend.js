@@ -1,7 +1,9 @@
-angular.module('necommend', [])
-  .controller('necommendController', function(){
+angular.module('necommend', ['ngResource'])
+  .controller('necommendController', function($resource){
+    var necolist = $resource('/api/necommend');
     var adCount = 0;
     var i = 0;
+    this.necolist = necolist.query();
     this.test = function test() {
       console.log('angular test clicked');
     };

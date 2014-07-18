@@ -32,29 +32,38 @@
           <button ng-click="necommend.test()">test</button>
           <button class="testbutton">test2</button>
           <ul class="thumbnails">
-            {% for neco in neco_list %}
-            <li class="col-sm-3 ad " ng-if="necommend.insertAd(0)">
-              <div id="cat_banner1" class="thumbnail"></div>
-            </li>
-            <li class="col-sm-3 ad " ng-if="necommend.insertAd(1)">
-              <div id="cat_banner2" class="thumbnail"></div>
-            </li>
-            <li class="col-sm-3 ad " ng-if="necommend.insertAd(2)">
-              <div id="cat_banner3" class="thumbnail"></div>
-            </li>
-            <!-- <li class="col&#45;sm&#45;3 ad " ng&#45;if="true"> -->
-            <!--   <!&#45;&#45; <div id="cat_banner3" class="thumbnail"></div> &#45;&#45;> -->
-            <!-- </li> -->
-            <li class="col-sm-3">
+            {% verbatim %}
+            <li ng-repeat="neco in necommend.necolist">
               <div class="thumbnail">
-                <!-- <a href ="/necommend/{{ neco.id }}/"> -->
-                <!--   <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/> -->
-                <a href ="{{STATIC_URL}}img/{{neco.img}}" ng-click="necommend.tellNecosUrl({{ neco.id }})" data-gallery="gallery">
-                      <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/>
+                <a href="/necommend/{{neco.id}}">
+                  <img class="thum_img" src="static/img/{{neco.img}}" alt="neco">
                 </a>
               </div>
             </li>
-            {% endfor %}
+            {% endverbatim %}
+            <!-- {% for neco in neco_list %} -->
+            <!-- <li class="col&#45;sm&#45;3 ad " ng&#45;if="necommend.insertAd(0)"> -->
+            <!--   <div id="cat_banner1" class="thumbnail"></div> -->
+            <!-- </li> -->
+            <!-- <li class="col&#45;sm&#45;3 ad " ng&#45;if="necommend.insertAd(1)"> -->
+            <!--   <div id="cat_banner2" class="thumbnail"></div> -->
+            <!-- </li> -->
+            <!-- <li class="col&#45;sm&#45;3 ad " ng&#45;if="necommend.insertAd(2)"> -->
+            <!--   <div id="cat_banner3" class="thumbnail"></div> -->
+            <!-- </li> -->
+            <!-- <li class="col&#45;sm&#45;3 ad " ng&#45;if="true"> -->
+            <!--   <!&#45;&#45; <div id="cat_banner3" class="thumbnail"></div> &#45;&#45;> -->
+            <!-- </li> -->
+            <!-- <li class="col&#45;sm&#45;3"> -->
+            <!--   <div class="thumbnail"> -->
+            <!--     <!&#45;&#45; <a href ="/necommend/{{ neco.id }}/"> &#45;&#45;> -->
+            <!--     <!&#45;&#45;   <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/> &#45;&#45;> -->
+            <!--     <a href ="{{STATIC_URL}}img/{{neco.img}}" ng&#45;click="necommend.tellNecosUrl({{ neco.id }})" data&#45;gallery="gallery"> -->
+            <!--           <img class="thum_img" src="{{STATIC_URL}}img/{{ neco.img }}"/> -->
+            <!--     </a> -->
+            <!--   </div> -->
+            <!-- </li> -->
+            <!-- {% endfor %} -->
           </ul>
           <!-- </div> -->
         </div>
